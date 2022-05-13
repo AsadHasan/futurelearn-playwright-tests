@@ -1,0 +1,31 @@
+{
+  "name": "futurelearn-playwright",
+  "version": "1.0.0",
+  "description": "Playwright cross-browser tests",
+  "scripts": {
+    "prepare": "husky install",
+    "lint": "gts lint",
+    "clean": "gts clean",
+    "fix": "gts fix",
+    "test": "playwright test"
+  },
+  "keywords": ["Playwright", "Cross browser", "TYpescript"],
+  "author": "Asad Hasan",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.21.1",
+    "@types/node": "^14.11.2",
+    "@typescript-eslint/eslint-plugin": "^5.23.0",
+    "eslint": "^8.15.0",
+    "eslint-plugin-playwright": "^0.9.0",
+    "gts": "^3.1.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^12.4.1",
+    "prettier": "^2.6.2",
+    "typescript": "^4.0.3"
+  },
+  "files": [],
+  "lint-staged": {
+    "**.{js,ts}": "npm run fix"
+  }
+}
