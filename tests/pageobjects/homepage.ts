@@ -4,6 +4,7 @@ export class Homepage {
   private readonly page;
   private readonly subjects;
   private readonly cookiesAcceptance;
+  private readonly cookiesClose;
   private readonly subjectCategories;
   private readonly menuHamburger;
 
@@ -13,6 +14,7 @@ export class Homepage {
       '[aria-label="Site"] a[role="button"]:has-text("Subjects")'
     );
     this.cookiesAcceptance = page.locator("button:has-text('Accept All')");
+    this.cookiesClose = page.locator('#close-pc-btn-handler');
     this.subjectCategories = page.locator(
       "[class*='subjectsAndTopics-subjects'] li"
     );
@@ -25,7 +27,11 @@ export class Homepage {
   }
 
   async acceptCookies() {
-    await this.cookiesAcceptance.click();
+    if (await this.cookiesClose.isVisible()) {
+      await this.cookiesClose.click();
+    } else {
+      await this.cookiesAcceptance.click();
+    }
     return this;
   }
 
