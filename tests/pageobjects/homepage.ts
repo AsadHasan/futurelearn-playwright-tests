@@ -27,9 +27,9 @@ export class Homepage {
   }
 
   async acceptCookies() {
-    if (await this.cookiesClose.isVisible()) {
+    try {
       await this.cookiesClose.click();
-    } else {
+    } catch (e) {
       await this.cookiesAcceptance.click();
     }
     return this;
