@@ -14,7 +14,7 @@ export class Homepage {
       '[aria-label="Site"] a[role="button"]:has-text("Subjects")'
     );
     this.cookiesAcceptance = page.locator("button:has-text('Accept All')");
-    this.cookiesClose = page.locator('#close-pc-btn-handler');
+    this.cookiesClose = page.locator('.onetrust-close-btn-handler');
     this.subjectCategories = page.locator(
       "[class*='subjectsAndTopics-subjects'] li"
     );
