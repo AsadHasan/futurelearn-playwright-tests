@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  build:
+  tests:
     docker:
       - image: mcr.microsoft.com/playwright:v1.22.0-focal
     steps:
@@ -18,3 +18,5 @@ jobs:
           path: test-results
       - store_artifacts:
           path: test-results
+    parallelism: 6
+    
