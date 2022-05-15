@@ -9,6 +9,9 @@ jobs:
           name: Install project dependencies
           command: npm ci
       - run:
+          name: Install Chrome and Edge browsers
+          command: npx playwright install msedge & npx playwright install chrome
+      - run:
           name: Playwright tests
           command: npm test
       - store_test_results:
