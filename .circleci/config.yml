@@ -12,9 +12,25 @@ jobs:
           name: Install Chrome and Edge browsers
           command: npx playwright install msedge & npx playwright install chrome
       - run:
-          name: Playwright tests
-          command: npm test
+          name: Playwright tests 1
+          command: npx playwright test --shard=1/6
+      - run:
+          name: Playwright tests 2
+          command: npx playwright test --shard=2/6
+      - run:
+          name: Playwright tests 3
+          command: npx playwright test --shard=3/6
+      - run:
+          name: Playwright tests 4
+          command: npx playwright test --shard=4/6
+      - run:
+          name: Playwright tests 5
+          command: npx playwright test --shard=5/6
+      - run:
+          name: Playwright tests 6
+          command: npx playwright test --shard=6/6
       - store_test_results:
           path: test-results
       - store_artifacts:
           path: test-results
+    parallelism: 6
